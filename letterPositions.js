@@ -36,6 +36,6 @@ const assertEqualArrays = function (array1, array2) {
   }
 };
 
-console.log(letterPostitions("hello"));
-
-assertEqualArrays(letterPostitions("hello").l, [2, 3]);
+// test cases
+// console.log(letterPostitions("hello"));
+// assertEqualArrays(letterPostitions("hello").l, [2, 3]);
