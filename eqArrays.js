@@ -8,20 +8,20 @@ const assertEqual = function(actual, expected) {
 
 const eqArrays = function(array1, array2) {
 
-  let equal = true;
+  let match = true;
 
   if (array1.length === array2.length) {
     for (let i = 0; i < array1.length; i++) {
       if (array1[i] === array2[i]) {
-        equal = true;
+        match = true;
       } else {
-        equal = false;
+        match = false;
       }
     }
   } else {
-    equal = false;
+    match = false;
   }
-  return equal;
+  return match;
 };
 
 // test cases
