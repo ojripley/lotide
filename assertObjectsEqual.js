@@ -1,4 +1,4 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`✅  Assertation Passed: ${actual} === ${expected}`);
   } else {
@@ -22,12 +22,12 @@ const eqArrays = function (array1, array2) {
   return match;
 };
 
-const eqObjects = function(obj1, obj2) {
+const eqObjects = function (obj1, obj2) {
   let match = true;
 
   let obj1Keys = Object.keys(obj1); // list of keys for object 1
   let obj2Keys = Object.keys(obj2); // list of keys for object 1
-  
+
   if (obj1Keys.length !== obj2Keys.length) { // if objects don't have same number of keys
     match = false;
   } else {
@@ -43,24 +43,3 @@ const eqObjects = function(obj1, obj2) {
   }
   return match;
 };
-
-
-// test cases
-
-// test objects (primitives)
-// const ab = { a: "1", b: "2" };
-// const ba = { b: "2", a: "1" };
-// const abc = { a: "1", b: "2", c: "3" };
-
-// // test calls (primitives)
-// assertEqual(eqObjects(ab, ba), true);
-// assertEqual(eqObjects(ab, abc), false);
-
-// // test objects (arrays)
-// const cd = { c: "1", d: ["2", 3] };
-// const dc = { d: ["2", 3], c: "1" };
-// const cd2 = { c: "1", d: ["2", 3, 4] };
-
-// // test calls (arrays)
-// assertEqual(eqObjects(cd, dc), true);
-// assertEqual(eqObjects(cd, cd2), false);
