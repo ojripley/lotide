@@ -23,4 +23,4 @@ const countLetters = function(str) {
 };
 
 // test case
-// console.log(countLetters("this is a test case for counting letters in a string"));
+console.log(countLetters("this is a test case for counting letters in a string"));

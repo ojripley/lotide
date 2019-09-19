@@ -47,20 +47,20 @@ const eqObjects = function(obj1, obj2) {
 
 // test cases
 
-// test objects (primitives)
-// const ab = { a: "1", b: "2" };
-// const ba = { b: "2", a: "1" };
-// const abc = { a: "1", b: "2", c: "3" };
+//test objects (primitives)
+const ab = { a: "1", b: "2" };
+const ba = { b: "2", a: "1" };
+const abc = { a: "1", b: "2", c: "3" };
 
-// // test calls (primitives)
-// assertEqual(eqObjects(ab, ba), true);
-// assertEqual(eqObjects(ab, abc), false);
+// test calls (primitives)
+assertEqual(eqObjects(ab, ba), true);
+assertEqual(eqObjects(ab, abc), false);
 
-// // test objects (arrays)
-// const cd = { c: "1", d: ["2", 3] };
-// const dc = { d: ["2", 3], c: "1" };
-// const cd2 = { c: "1", d: ["2", 3, 4] };
+// test objects (arrays)
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+const cd2 = { c: "1", d: ["2", 3, 4] };
 
-// // test calls (arrays)
-// assertEqual(eqObjects(cd, dc), true);
-// assertEqual(eqObjects(cd, cd2), false);
+// test calls (arrays)
+assertEqual(eqObjects(cd, dc), true);
+assertEqual(eqObjects(cd, cd2), false);

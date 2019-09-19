@@ -1,4 +1,4 @@
-const assertEqualArrays = function(array1, array2) {
+const assertArraysEqual = function(array1, array2) {
   
   let equal = true;
   
@@ -14,13 +14,13 @@ const assertEqualArrays = function(array1, array2) {
     equal = false;
   }
   if (equal) {
-    console.log(`✅  The arrays are equal`);
+    console.log(`✅  Assertation Passed: ${array1} === ${array2}`);
   } else {
-    console.log(`🛑  The arrays are not equal`);
+    console.log(`🛑  Assertation Failed: ${array1} !== ${array2}`);
   }
 };
 
-assertEqualArrays([1, 2, 3], [1, 2, 3]); // => should PASS
-assertEqualArrays([1, 2, 3], [3, 2, 1]); // => should PASS
-assertEqualArrays(["1", "2", "3"], ["1", "2", "3"]); // => should PASS
-assertEqualArrays(["1", "2", "3"], ["1", "2", 3]); // => should PASS
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
+assertArraysEqual([1, 2, 3], [3, 2, 1]); // => should PASS
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => should PASS
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => should PASS
