@@ -36,7 +36,9 @@ const eqObjects = function(obj1, obj2) {
         match = eqArrays(obj1[key], obj2[key]); // match is false if arrays not equal
       } else {
         if (typeof obj1[key] === 'object' && typeof obj2[key] === 'object') { // key values are objects, call eqObjects again with those keys
-          return eqObjects(obj1[key], obj2[key]);
+          if (!eqObjects(obj1[key], obj2[key])) {
+            return false; // if the inner objects are not equal, return false
+          }
         } else { // if not an array, and then not an object, check keys for match
           if (obj1[key] !== obj2[key]) { // if key in object 1 doesn't match it's counterpart in object 2
             match = false;
@@ -74,3 +76,4 @@ const eqObjects = function(obj1, obj2) {
 assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 3 }), false);

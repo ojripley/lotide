@@ -7,25 +7,28 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(array1, array2) {
-
-  let match = true;
-
   if (array1.length === array2.length) {
     for (let i = 0; i < array1.length; i++) {
-      if (array1[i] === array2[i]) {
-        match = true;
-      } else {
-        match = false;
+      if (Array.isArray(array1[i]) && Array.isArray(array2[i])) { // if elements are both inner arrays
+        let result = eqArrays(array1[i], array2[i]); // recursively compare their own elements
+        if (!result) {
+          return false;
+        }
+      } else { // if elements aren't arrays compare them
+        console.log(`${array1[i]}, ${array2[i]}`);
+        if (array1[i] !== array2[i]) {
+          return false;
+        }
       }
     }
   } else {
-    match = false;
+    return false;
   }
-  return match;
+  return true;
 };
 
 // test cases
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => should PASS
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => should PASS
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // => should PASS
+// assertEqual(eqArrays([1, [2, 4], 3], [1, [2, 4], 3]), true); // recursive refactor test
+assertEqual(eqArrays([3, [2, 9], 1], [3, [2, 9], 3]), false); // recursive refactor test
+// assertEqual(eqArrays(["1", "2", "3", "4"], ["1", "2", "3", "4"]), true);
+// assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
