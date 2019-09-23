@@ -1,26 +1,5 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅  Assertation Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑  Assertation Failed: ${actual} !== ${expected}`);
-  }
-};
-
-const eqArrays = function (array1, array2) {
-
-  let match = true;
-
-  if (array1.length === array2.length) { // if lengths are the same
-    for (let i = 0; i < array1.length; i++) { // iterate over arrays
-      if (array1[i] !== array2[i]) { // if values are different, fail test
-        match = false;
-      }
-    }
-  } else {
-    match = false;
-  }
-  return match;
-};
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
 const eqObjects = function(obj1, obj2) {
   let match = true;
@@ -73,7 +52,9 @@ const eqObjects = function(obj1, obj2) {
 
 // test cases for recursive compatible refactor
 // recursion allows us to handle objects that contain objects
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 3 }), false);
+// assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
+// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
+// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
+// assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 3 }), false);
+
+module.exports = eqObjects;
