@@ -6,4 +6,4 @@ const findKeyByValue = function(obj, value) {
   }
 };
 
-module.export = findKeyByValue;
+module.exports = findKeyByValue;
