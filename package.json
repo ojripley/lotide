@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/ojripley/lotide.git"
   },
-  "author": "Owen Ripley",
+  "author": "Owen Ripley <ojripley19@gmail.com> (https://github.com/ojripley/)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ojripley/lotide/issues"
