@@ -1,5 +1,5 @@
 {
-  "name": "lotide",
+  "name": "@ojripley/lotide",
   "version": "1.0.0",
   "description": "a mini clone of the https://lodash.com library. Developed as a learning exercise only, DO NOT use this library in production code.",
   "main": "index.js",
