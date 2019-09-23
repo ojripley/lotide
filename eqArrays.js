@@ -7,7 +7,6 @@ const eqArrays = function(array1, array2) {
           return false;
         }
       } else { // if elements aren't arrays compare them
-        console.log(`${array1[i]}, ${array2[i]}`);
         if (array1[i] !== array2[i]) {
           return false;
         }
