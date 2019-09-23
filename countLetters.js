@@ -14,7 +14,4 @@ const countLetters = function(str) {
   return countedLetters;
 };
 
-// test case
-// console.log(countLetters("this is a test case for counting letters in a string"));
-
 module.exports = countLetters;
