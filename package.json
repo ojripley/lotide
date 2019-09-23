@@ -1,0 +1,26 @@
+{
+  "name": "lotide",
+  "version": "1.0.0",
+  "description": "a mini clone of the https://lodash.com library. Developed as a learning exercise only, DO NOT use this library in production code.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ojripley/lotide.git"
+  },
+  "author": "Owen Ripley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ojripley/lotide/issues"
+  },
+  "homepage": "https://github.com/ojripley/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}
