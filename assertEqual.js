@@ -8,6 +8,8 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// test
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
+// export
+module.exports = assertEqual;
+
+// when exporting modules, make sure you pass the variable that points
+// to the function and not actually calling the function itself
